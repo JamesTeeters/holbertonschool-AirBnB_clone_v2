@@ -23,12 +23,13 @@ class DBStorage:
         pwd = os.getenv("HBNB_MYSQL_PWD")
         host = os.getenv("HBNB_MYSQL_HOST")
         db = os.getenv("HBNB_MYSQL_DB")
+        env = os.getenv('HBNB_MYSQL_ENV')
         db_url = "mysql+mysqldb://{}:{}@{}/{}".format(usr, pwd, host, db)
 
         self.__engine = create_engine(db_url, pool_pre_ping=True)
 
         if os.getenv("HBNB_ENV") == "test":
-            Base.metadata.drop_all(self.__engine)
+            Base.metadata.drop_all(bind=self.__engine)
 
     def all(self, cls=None):
         """return all objects in DBStorage session"""

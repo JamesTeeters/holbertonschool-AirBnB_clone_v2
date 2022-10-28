@@ -123,6 +123,7 @@ class HBNBCommand(cmd.Cmd):
             print("** class doesn't exist **")
             return
         new_instance = HBNBCommand.classes[arg[0]]()
+        storage.new(new_instance)
         for i in range(1, len(arg)):
             key_value = arg[i].partition("=")
             key = key_value[0]
