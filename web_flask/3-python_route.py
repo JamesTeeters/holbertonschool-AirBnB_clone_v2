@@ -39,7 +39,7 @@ def P_is_cool():
 
 
 @app.route("/python/<text>")
-def P_text(text="is cool"):
+def P_text(text):
     """
     displays Python followed by User input
     """
