@@ -40,7 +40,7 @@ def P_text(text="is cool"):
     return ("Python {}".format(text))
 
 
-@app.route("/number/<n>")
+@app.route("/number/<int:n>")
 def number(n):
     """
     displays number if integer
