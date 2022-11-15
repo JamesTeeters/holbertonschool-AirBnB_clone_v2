@@ -29,12 +29,12 @@ def C(text):
     return ("C {}".format(text))
 
 
-
 @app.route("/python")
 @app.route("/python/<text>")
-def P_text(text = "is cool"):
+def P_text(text="is cool"):
     """
     displays Python followed by User input
+    default Python is cool
     """
     text = text.replace("_", " ")
     return ("Python {}".format(text))
