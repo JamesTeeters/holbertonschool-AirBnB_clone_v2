@@ -34,11 +34,12 @@ def C(text):
 def P_is_cool():
     return "Python is cool"
 """
-
- @app.route("/python/<text>")
+"""
+@app.route("/python/<text>")
 def P_is_cool(text="is cool"):
     text = text.replace("_", " ")
     return f"Python {text}"
+"""
 
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000')
