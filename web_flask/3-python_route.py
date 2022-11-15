@@ -20,7 +20,7 @@ def HBNB():
 @app.route("/c/<text>")
 def C(text):
     text = text.replace("_", " ")
-    return f"C {text}"
+    return ("C {}".format(text))
 
 
 @app.route("/python/", defaults={'text': 'is cool'})
