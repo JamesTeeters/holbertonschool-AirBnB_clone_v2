@@ -26,6 +26,7 @@ def C(text):
 @app.route("/python")
 @app.route("/python/<text>")
 def P_is_cool(text="is cool"):
+    "does this make you happy"
     text = text.replace("_", " ")
     return f"Python {text}"
 
