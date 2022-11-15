@@ -29,11 +29,11 @@ def C(text):
     return ("C {}".format(text))
 
 
-"""
+
 @app.route("/python")
 def P_is_cool():
     return "Python is cool"
-"""
+
 """
 @app.route("/python/<text>")
 def P_is_cool(text="is cool"):
