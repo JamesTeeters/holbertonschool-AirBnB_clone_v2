@@ -38,13 +38,13 @@ def P_is_cool():
     return "Python is cool"
 
 
-"""@app.route("/python/<text>")"""
+@app.route("/python/<text>")
 def P_text(text):
     """
     displays Python followed by User input
     """
     text = text.replace("_", " ")
-    return f"Python {text}"
+    return ("Python {}".format(text))
 
 
 if __name__ == "__main__":
