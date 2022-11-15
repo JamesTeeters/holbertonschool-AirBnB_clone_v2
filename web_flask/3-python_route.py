@@ -23,15 +23,11 @@ def C(text):
     return f"C {text}"
 
 
+@app.route("/python/", defaults={'text': 'is cool'})
 @app.route("/python/<text>")
-def Python(text="cool"):
+def Python(text="is cool"):
     text = text.replace("_", " ")
     return f"Python {text}"
-
-
-@app.route("/python")
-def cool():
-    return "Python is cool"
 
 
 if __name__ == "__main__":
