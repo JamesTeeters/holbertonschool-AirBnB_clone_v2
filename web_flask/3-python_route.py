@@ -23,12 +23,5 @@ def C(text):
     return ("C {}".format(text))
 
 
-@app.route("/python")
-@app.route("/python/<text>")
-def Python(text="is cool"):
-    text = text.replace("_", " ")
-    return f"Python {text}"
-
-
 if __name__ == "__main__":
     app.run(host='0.0.0.0', port='5000')
