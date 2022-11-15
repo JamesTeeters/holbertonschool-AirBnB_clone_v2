@@ -31,15 +31,8 @@ def C(text):
 
 
 @app.route("/python")
-def P_is_cool():
-    """
-    displays Python is cool
-    """
-    return "Python is cool"
-
-
 @app.route("/python/<text>")
-def P_text(text):
+def P_text(text = "is cool"):
     """
     displays Python followed by User input
     """
