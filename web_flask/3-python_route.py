@@ -25,26 +25,18 @@ def HBNB():
 
 @app.route("/c/<text>")
 def C(text):
-    """
-    prints C followed by user input
-    """
     text = text.replace("_", " ")
     return ("C {}".format(text))
 
 
+"""
 @app.route("/python")
 def P_is_cool():
-    """
-    displays Python is cool
-    """
     return "Python is cool"
+"""
 
-
-@app.route("/python/<text>")
+ @app.route("/python/<text>")
 def P_is_cool(text="is cool"):
-    """
-    print Python followed by user input
-    """
     text = text.replace("_", " ")
     return f"Python {text}"
 
