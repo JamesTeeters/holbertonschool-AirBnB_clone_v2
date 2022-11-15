@@ -28,6 +28,7 @@ def Python(text="cool"):
     text = text.replace("_", " ")
     return f"Python {text}"
 
+
 @app.route("/python")
 def cool():
     return "Python is cool"
