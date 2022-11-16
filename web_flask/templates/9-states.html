@@ -9,7 +9,7 @@
         <UL>
         {% for state in all_states.values() | sort(attribute="name") %}
             <LI>{{state.id}}: <B>{{state.name}}</B></LI>
-        {%enfor%}
+        {%endfor%}
         </UL>
     {% elif state_id in all_states %}
         <H1>States: {{all_states[state_id].name}}</H1>
