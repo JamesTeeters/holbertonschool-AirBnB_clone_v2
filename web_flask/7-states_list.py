@@ -9,9 +9,7 @@ app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-app.route("/states_list")
-
-
+@app.route("/states_list")
 def states_list():
     """
     show a list of states
