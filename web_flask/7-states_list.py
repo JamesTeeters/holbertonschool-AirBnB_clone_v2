@@ -1,24 +1,29 @@
 #!/usr/bin/python3
 "a script that starts a Flask web application"
-from flask import Flask, g
+from flask import Flask, render_template, g
 from models import storage
+from models import State
 
 
 app = Flask(__name__)
 app.url_map.strict_slashes = False
 
 
-def get_db():
-    if 'db' not in g:
-        g.db = storage.all()
-    return g.db
+app.route("/states_list")
+def states():
+    """
+    show a list of states
+    """
+    states_list = storage.all(State)
+    return render_template('7-states_list.html', states_list=states_list)
 
 
 @app.teardown_appcontext
 def teardown_db(exception):
-    db = g.pop('db', None)
-    if db is not None:
-        db.close()
+    """
+    close current session
+    """
+    storage.close()
 
 
 if __name__ == "__main__":
