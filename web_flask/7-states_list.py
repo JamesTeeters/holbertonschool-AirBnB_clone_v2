@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 "a script that starts a Flask web application"
-from flask import Flask, render_template, g
+from flask import Flask, render_template
 from models import storage
 from models import State
 
@@ -10,12 +10,12 @@ app.url_map.strict_slashes = False
 
 
 app.route("/states_list")
-def states():
+def states_list():
     """
     show a list of states
     """
-    states_list = storage.all(State)
-    return render_template('7-states_list.html', states_list=states_list)
+    all_states = storage.all(State)
+    return render_template('7-states_list.html', all_states=all_states)
 
 
 @app.teardown_appcontext
