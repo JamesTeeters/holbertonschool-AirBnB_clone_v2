@@ -14,7 +14,7 @@ def states_list():
     """
     show a list of states
     """
-    all_states = storage.all("State").values()
+    all_states = storage.all(State)
     return render_template('7-states_list.html', all_states=all_states)
 
 
